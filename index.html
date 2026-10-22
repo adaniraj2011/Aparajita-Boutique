@@ -12,6 +12,7 @@
 <meta name="theme-color" content="#6b1028">
 <link rel="icon" type="image/png" href="/img/logo-mark.png">
 <title>Aparajita · Spin the Royal Wheel</title>
+<!-- build: login-v2 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cinzel+Decorative:wght@700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Jost:wght@300;400;500&display=swap">
@@ -433,7 +434,7 @@ footer .brand{justify-content:center;margin-bottom:10px}
   /* ===== GOOGLE SHEET CONNECTION =====
      Paste your Google Apps Script "Web app URL" between the quotes below.
      Leave it empty to run in test mode (nothing is saved). */
-  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzph0siHU5SwgVjTHy9oC0s4WcVu0wwjPZAwMLpfRwBZedF5MN7P6NBE8KoXeVfCnoJ/exec";
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz9OCsADX5j_HPyO77TJDf9XZZvfknPCM1cKxMYuNqdm2GXMfIsuQ7sIDFbU6P2dgpt/exec";
   const KIOSK = true;
   const KEY = "aparajita-festive-2026";
   const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -634,6 +635,7 @@ footer .brand{justify-content:center;margin-bottom:10px}
   }
   function resetForNext(){ document.getElementById("modal").hidden = true; btn.disabled=false; form.reset(); }
   btn.onclick = openEntry;
+  setTimeout(openEntry, 600); /* show the details form as soon as the page opens */
   document.getElementById("closeModal").onclick = resetForNext;
   document.getElementById("nextGuest").onclick = () => { resetForNext(); openEntry(); };
   document.getElementById("modal").addEventListener("click", e => { if(e.target.id==="modal") resetForNext(); });
